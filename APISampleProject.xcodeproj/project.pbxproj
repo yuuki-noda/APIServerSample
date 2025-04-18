@@ -6,36 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B69247422DB2C6D8008C2511 /* APIServer in Frameworks */ = {isa = PBXBuildFile; productRef = B69247412DB2C6D8008C2511 /* APIServer */; };
+		B69247532DB2C886008C2511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B692474A2DB2C886008C2511 /* Assets.xcassets */; };
+		B69247542DB2C886008C2511 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B692474B2DB2C886008C2511 /* Info.plist */; };
+		B69247552DB2C886008C2511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */; };
+		B69247562DB2C886008C2511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692474F2DB2C886008C2511 /* ViewController.swift */; };
+		B69247572DB2C886008C2511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69247492DB2C886008C2511 /* AppDelegate.swift */; };
+		B69247582DB2C886008C2511 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692474E2DB2C886008C2511 /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B67009BF2DB2C19000C8D3EE /* APISampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APISampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69247492DB2C886008C2511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B692474A2DB2C886008C2511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B692474B2DB2C886008C2511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B692474C2DB2C886008C2511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B692474E2DB2C886008C2511 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B692474F2DB2C886008C2511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B69247512DB2C886008C2511 /* APIServer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIServer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B67009D12DB2C19100C8D3EE /* Exceptions for "APISampleProject" folder in "APISampleProject" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = B67009BE2DB2C19000C8D3EE /* APISampleProject */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B67009C12DB2C19000C8D3EE /* APISampleProject */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				B67009D12DB2C19100C8D3EE /* Exceptions for "APISampleProject" folder in "APISampleProject" target */,
-			);
-			path = APISampleProject;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B67009BC2DB2C19000C8D3EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69247422DB2C6D8008C2511 /* APIServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +42,8 @@
 		B67009B62DB2C19000C8D3EE = {
 			isa = PBXGroup;
 			children = (
-				B67009C12DB2C19000C8D3EE /* APISampleProject */,
+				B69247502DB2C886008C2511 /* APISampleProject */,
+				B69247522DB2C886008C2511 /* Packages */,
 				B67009C02DB2C19000C8D3EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +54,27 @@
 				B67009BF2DB2C19000C8D3EE /* APISampleProject.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B69247502DB2C886008C2511 /* APISampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				B69247492DB2C886008C2511 /* AppDelegate.swift */,
+				B692474A2DB2C886008C2511 /* Assets.xcassets */,
+				B692474B2DB2C886008C2511 /* Info.plist */,
+				B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */,
+				B692474E2DB2C886008C2511 /* SceneDelegate.swift */,
+				B692474F2DB2C886008C2511 /* ViewController.swift */,
+			);
+			path = APISampleProject;
+			sourceTree = "<group>";
+		};
+		B69247522DB2C886008C2511 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B69247512DB2C886008C2511 /* APIServer */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,11 +92,9 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				B67009C12DB2C19000C8D3EE /* APISampleProject */,
-			);
 			name = APISampleProject;
 			packageProductDependencies = (
+				B69247412DB2C6D8008C2511 /* APIServer */,
 			);
 			productName = APISampleProject;
 			productReference = B67009BF2DB2C19000C8D3EE /* APISampleProject.app */;
@@ -107,6 +124,8 @@
 			);
 			mainGroup = B67009B62DB2C19000C8D3EE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B67009C02DB2C19000C8D3EE /* Products */;
 			projectDirPath = "";
@@ -122,6 +141,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69247532DB2C886008C2511 /* Assets.xcassets in Resources */,
+				B69247542DB2C886008C2511 /* Info.plist in Resources */,
+				B69247552DB2C886008C2511 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +154,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69247562DB2C886008C2511 /* ViewController.swift in Sources */,
+				B69247572DB2C886008C2511 /* AppDelegate.swift in Sources */,
+				B69247582DB2C886008C2511 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B692474C2DB2C886008C2511 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B67009D32DB2C19100C8D3EE /* Debug */ = {
@@ -331,6 +367,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B69247412DB2C6D8008C2511 /* APIServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = APIServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B67009B72DB2C19000C8D3EE /* Project object */;
 }
