@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B66480F32DBC02AC0075452C /* ServerView in Frameworks */ = {isa = PBXBuildFile; productRef = B66480F22DBC02AC0075452C /* ServerView */; };
 		B69247422DB2C6D8008C2511 /* APIServer in Frameworks */ = {isa = PBXBuildFile; productRef = B69247412DB2C6D8008C2511 /* APIServer */; };
 		B69247532DB2C886008C2511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B692474A2DB2C886008C2511 /* Assets.xcassets */; };
 		B69247552DB2C886008C2511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */; };
@@ -16,10 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B65F97AE2DBBC9D7005FD4BB /* ServerView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServerView; sourceTree = "<group>"; };
 		B67009BF2DB2C19000C8D3EE /* APISampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APISampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69247492DB2C886008C2511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B692474A2DB2C886008C2511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B692474B2DB2C886008C2511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B692474C2DB2C886008C2511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B692474E2DB2C886008C2511 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B69247512DB2C886008C2511 /* APIServer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIServer; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 			files = (
 				B6EF585A2DB2D62A00E0CD2B /* Root in Frameworks */,
 				B69247422DB2C6D8008C2511 /* APIServer in Frameworks */,
+				B66480F32DBC02AC0075452C /* ServerView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +64,6 @@
 			children = (
 				B69247492DB2C886008C2511 /* AppDelegate.swift */,
 				B692474A2DB2C886008C2511 /* Assets.xcassets */,
-				B692474B2DB2C886008C2511 /* Info.plist */,
 				B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */,
 				B692474E2DB2C886008C2511 /* SceneDelegate.swift */,
 			);
@@ -72,6 +73,7 @@
 		B69247522DB2C886008C2511 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				B65F97AE2DBBC9D7005FD4BB /* ServerView */,
 				B6EF58572DB2D35800E0CD2B /* Root */,
 				B69247512DB2C886008C2511 /* APIServer */,
 			);
@@ -104,6 +106,7 @@
 			packageProductDependencies = (
 				B69247412DB2C6D8008C2511 /* APIServer */,
 				B6EF58592DB2D62A00E0CD2B /* Root */,
+				B66480F22DBC02AC0075452C /* ServerView */,
 			);
 			productName = APISampleProject;
 			productReference = B67009BF2DB2C19000C8D3EE /* APISampleProject.app */;
@@ -189,7 +192,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = APISampleProject/Info.plist;
+				INFOPLIST_FILE = APISampleProject/Resource/InfoPlist/APISampleProjectInfo.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -216,7 +219,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = APISampleProject/Info.plist;
+				INFOPLIST_FILE = APISampleProject/Resource/InfoPlist/APISampleProjectInfo.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -378,6 +381,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B66480F22DBC02AC0075452C /* ServerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ServerView;
+		};
 		B69247412DB2C6D8008C2511 /* APIServer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = APIServer;

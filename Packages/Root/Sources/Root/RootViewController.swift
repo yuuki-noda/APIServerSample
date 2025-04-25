@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ServerView
 
 public class RootViewController: UIViewController {
     @IBOutlet private var serverModeButton: UIButton!
@@ -15,7 +16,10 @@ public class RootViewController: UIViewController {
     }
     
     @IBAction private func didTapServerModeButton() {
-        print("[APISampleProject] \(#function)")
+        let viewController = ServerViewController.loadNib()
+        viewController.modalTransitionStyle = .coverVertical
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
     }
 }
 

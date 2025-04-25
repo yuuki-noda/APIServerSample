@@ -4,32 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "Root",
+    name: "ServerView",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Root",
-            targets: ["Root"]
-        ),
+            name: "ServerView",
+            targets: ["ServerView"]),
     ],
     dependencies: [
-        .package(path: "../ServerView")
+        .package(path: "../APIServer")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Root",
+            name: "ServerView",
             dependencies: [
-                .product(name: "ServerView", package: "ServerView")
+                .product(name: "APIServer", package: "APIServer")
             ]
         ),
         .testTarget(
-            name: "RootTests",
-            dependencies: ["Root"]
+            name: "ServerViewTests",
+            dependencies: ["ServerView"]
         ),
     ]
 )
