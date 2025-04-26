@@ -9,11 +9,9 @@ import Foundation
 import APIServer
 
 protocol TodoListInteractorInput: AnyObject {
-    var viewModel: TodoListViewModel { get }
-    
     // MARK: Methods called from presenter
 
-    func fetch(force: Bool) async throws
+    func fetch(force: Bool) async throws -> [TodoCellViewModel]
 }
 
 protocol TodoListInteractorOutput: AnyObject {
@@ -27,13 +25,10 @@ final class TodoListInteractor {
     private var repository: TodoListRepositoryInterface
 
     // MARK: Stored instance properties
-
-    private(set) var viewModel = TodoListViewModel(todoCellViewModels: [])
     
     // MARK: Computed instance properties
 
     // MARK: Initializer
-    
     init(repository: TodoListRepositoryInterface) {
         self.repository = repository
     }
@@ -42,9 +37,8 @@ final class TodoListInteractor {
 }
 
 extension TodoListInteractor: TodoListInteractorInput {
-    func fetch(force: Bool = true) async throws {
+    func fetch(force: Bool = true) async throws -> [TodoCellViewModel] {
         let todos = try await repository.fetch(force: force)
-        let viewModel = TodoListViewModel(todoCellViewModels: todos.map({ TodoCellViewModel(todo: $0) }))
-        self.viewModel = viewModel
+        return todos.map({ TodoCellViewModel(todo: $0) })
     }
 }

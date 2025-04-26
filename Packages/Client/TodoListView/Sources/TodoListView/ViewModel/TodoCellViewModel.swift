@@ -8,8 +8,8 @@
 import Foundation
 import APIServer
 
-final class TodoCellViewModel: ObservableObject, Identifiable {
-    @Published var todo: Todo
+final class TodoCellViewModel: ObservableObject, Identifiable, Sendable {
+    let todo: Todo
     
     init(todo: Todo) {
         self.todo = todo

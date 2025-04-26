@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 @MainActor
 protocol TodoListViewInput: AnyObject {
@@ -15,6 +16,15 @@ protocol TodoListViewInput: AnyObject {
 
 final public class TodoListViewController: UIViewController {
     var presenter: TodoListPresenterInput!
+    private var cancellables: [AnyCancellable] = []
+    
+    private let activityView: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView(style: .large)
+        activityView.color = .white
+        activityView.backgroundColor = .lightGray
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        return activityView
+    }()
     
     private let emptyLabel: UILabel = {
         let label = UILabel()
@@ -28,12 +38,14 @@ final public class TodoListViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        title = "Todo List"
+        view.backgroundColor = .systemGroupedBackground
         
         let viewController = UIHostingController(rootView: TodoListView(viewModel: presenter.viewModel))
         addChild(viewController)
         view.addSubview(viewController.view)
         view.addSubview(emptyLabel)
+        view.addSubview(activityView)
         
         viewController.didMove(toParent: self)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,14 +58,30 @@ final public class TodoListViewController: UIViewController {
             emptyLabel.topAnchor.constraint(equalTo: view.topAnchor),
             emptyLabel.leftAnchor.constraint(equalTo: view.leftAnchor),
             emptyLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
-            emptyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            emptyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            activityView.topAnchor.constraint(equalTo: view.topAnchor),
+            activityView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            activityView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            activityView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "gearshape"),
             style: .plain,
             target: self,
             action: #selector(didTapSettingButton)
         )
+        
+        presenter.isLoadingPublisher.receive(on: DispatchQueue.main).sink { isLoading in
+            if isLoading {
+                self.activityView.startAnimating()
+            } else {
+                self.activityView.stopAnimating()
+            }
+            self.activityView.isHidden = !isLoading
+        }.store(in: &cancellables)
+        
+        presenter.viewDidLoad()
     }
     
     @objc

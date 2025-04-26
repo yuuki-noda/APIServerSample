@@ -23,7 +23,8 @@ final class TodoListPresenter {
     weak var view: TodoListViewInput?
     let interactor: TodoListInteractorInput
     let router: TodoListRouterInput
-
+    let viewModel = TodoListViewModel(todoCellViewModels: [])
+    
     @Published var isLoading = false
 
     init(view: TodoListViewInput, interactor: TodoListInteractorInput, router: TodoListRouterInput) {
@@ -37,7 +38,8 @@ final class TodoListPresenter {
         Task { [weak view] in
             isLoading = true
             do {
-                try await interactor.fetch(force: force)
+                let viewModels = try await interactor.fetch(force: force)
+                viewModel.todoCellViewModels = viewModels
                 view?.update()
             }
             catch {
@@ -51,10 +53,6 @@ final class TodoListPresenter {
 extension TodoListPresenter: TodoListPresenterInput {
     var isLoadingPublisher: Published<Bool>.Publisher {
         return $isLoading
-    }
-
-    var viewModel: TodoListViewModel {
-        return interactor.viewModel
     }
     
     func viewDidLoad() {

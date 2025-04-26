@@ -6,6 +6,7 @@
 //
 
 import APIServer
+import Foundation
 
 protocol TodoListRepositoryInterface {
     func fetch(force: Bool) async throws -> [Todo]
@@ -13,6 +14,26 @@ protocol TodoListRepositoryInterface {
 
 final class TodoListRepository: TodoListRepositoryInterface {
     func fetch(force: Bool = true) async throws -> [Todo] {
-        return []
+        sleep(1)
+        return [
+            Todo(
+                id: UUID(),
+                title: "タスク1",
+                expired: Calendar.current.date(byAdding: .day, value: 1, to: Date())!,
+                done: false
+            ),
+            Todo(
+                id: UUID(),
+                title: "タスク2",
+                expired: Calendar.current.date(byAdding: .month, value: 1, to: Date())!,
+                done: false
+            ),
+            Todo(
+                id: UUID(),
+                title: "タスク3",
+                expired: Calendar.current.date(byAdding: .year, value: 1, to: Date())!,
+                done: false
+            ),
+        ]
     }
 }
