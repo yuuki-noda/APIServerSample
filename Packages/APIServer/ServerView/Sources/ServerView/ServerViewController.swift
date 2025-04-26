@@ -23,6 +23,7 @@ public class ServerViewController: UIViewController {
         Task.detached(priority: .background) {
             do {
                 let apiServer = try await APIServer()
+                try apiServer.routing()
                 try await apiServer.start()
                 await MainActor.run {
                     self.server = apiServer
@@ -37,6 +38,10 @@ public class ServerViewController: UIViewController {
         }
     }
 
+    deinit {
+        server.shutdown()
+    }
+    
     func getIPAddress() -> String? {
         var address = ""
         var ifaddr: UnsafeMutablePointer<ifaddrs>?

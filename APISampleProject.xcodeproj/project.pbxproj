@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B66480F32DBC02AC0075452C /* ServerView in Frameworks */ = {isa = PBXBuildFile; productRef = B66480F22DBC02AC0075452C /* ServerView */; };
-		B69247422DB2C6D8008C2511 /* APIServer in Frameworks */ = {isa = PBXBuildFile; productRef = B69247412DB2C6D8008C2511 /* APIServer */; };
+		B683DCAC2DBD04670066E3C9 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = B683DCAB2DBD04670066E3C9 /* Root */; };
 		B69247532DB2C886008C2511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B692474A2DB2C886008C2511 /* Assets.xcassets */; };
 		B69247552DB2C886008C2511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692474D2DB2C886008C2511 /* LaunchScreen.storyboard */; };
 		B69247572DB2C886008C2511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69247492DB2C886008C2511 /* AppDelegate.swift */; };
 		B69247582DB2C886008C2511 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692474E2DB2C886008C2511 /* SceneDelegate.swift */; };
-		B6EF585A2DB2D62A00E0CD2B /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = B6EF58592DB2D62A00E0CD2B /* Root */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6EF585A2DB2D62A00E0CD2B /* Root in Frameworks */,
-				B69247422DB2C6D8008C2511 /* APIServer in Frameworks */,
-				B66480F32DBC02AC0075452C /* ServerView in Frameworks */,
+				B683DCAC2DBD04670066E3C9 /* Root in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +55,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B683DCA12DBCEF340066E3C9 /* APIServer */ = {
+			isa = PBXGroup;
+			children = (
+				B69247512DB2C886008C2511 /* APIServer */,
+				B65F97AE2DBBC9D7005FD4BB /* ServerView */,
+			);
+			path = APIServer;
+			sourceTree = "<group>";
+		};
+		B683DCA22DBCEF4F0066E3C9 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		B69247502DB2C886008C2511 /* APISampleProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +85,9 @@
 		B69247522DB2C886008C2511 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B65F97AE2DBBC9D7005FD4BB /* ServerView */,
+				B683DCA22DBCEF4F0066E3C9 /* Client */,
+				B683DCA12DBCEF340066E3C9 /* APIServer */,
 				B6EF58572DB2D35800E0CD2B /* Root */,
-				B69247512DB2C886008C2511 /* APIServer */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -104,9 +116,7 @@
 			);
 			name = APISampleProject;
 			packageProductDependencies = (
-				B69247412DB2C6D8008C2511 /* APIServer */,
-				B6EF58592DB2D62A00E0CD2B /* Root */,
-				B66480F22DBC02AC0075452C /* ServerView */,
+				B683DCAB2DBD04670066E3C9 /* Root */,
 			);
 			productName = APISampleProject;
 			productReference = B67009BF2DB2C19000C8D3EE /* APISampleProject.app */;
@@ -137,6 +147,7 @@
 			mainGroup = B67009B62DB2C19000C8D3EE;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				B683DCAA2DBD04670066E3C9 /* XCLocalSwiftPackageReference "Packages/Root" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B67009C02DB2C19000C8D3EE /* Products */;
@@ -380,16 +391,15 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		B683DCAA2DBD04670066E3C9 /* XCLocalSwiftPackageReference "Packages/Root" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Root;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		B66480F22DBC02AC0075452C /* ServerView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ServerView;
-		};
-		B69247412DB2C6D8008C2511 /* APIServer */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = APIServer;
-		};
-		B6EF58592DB2D62A00E0CD2B /* Root */ = {
+		B683DCAB2DBD04670066E3C9 /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Root;
 		};
