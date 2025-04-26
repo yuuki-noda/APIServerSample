@@ -7,10 +7,9 @@
 
 import UIKit
 import ServerView
+import TodoListView
 
 public class RootViewController: UIViewController {
-    @IBOutlet private var serverModeButton: UIButton!
-    
     public static func loadXib() -> RootViewController {
         return RootViewController(nibName: nil, bundle: .module)
     }
@@ -20,6 +19,14 @@ public class RootViewController: UIViewController {
         viewController.modalTransitionStyle = .coverVertical
         viewController.modalPresentationStyle = .overFullScreen
         present(viewController, animated: true)
+    }
+    
+    @IBAction private func didTapClientModeButton() {
+        let viewController = TodoListRouter.assembleModule()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalTransitionStyle = .coverVertical
+        navigationController.modalPresentationStyle = .overFullScreen
+        present(navigationController, animated: true)
     }
 }
 

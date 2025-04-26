@@ -4,34 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "Root",
+    name: "TodoListView",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Root",
-            targets: ["Root"]
+            name: "TodoListView",
+            targets: ["TodoListView"]
         ),
     ],
     dependencies: [
-        .package(path: "../APIServer/ServerView"),
-        .package(path: "../Client/TodoListView"),
+        .package(path: "../../APIServer/APIServer")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Root",
+            name: "TodoListView",
             dependencies: [
-                .product(name: "ServerView", package: "ServerView"),
-                .product(name: "TodoListView", package: "TodoListView")
+                .product(name: "APIServer", package: "APIServer")
             ]
         ),
         .testTarget(
-            name: "RootTests",
-            dependencies: ["Root"]
+            name: "TodoListViewTests",
+            dependencies: ["TodoListView"]
         ),
     ]
 )

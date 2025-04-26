@@ -17,6 +17,7 @@
 /* Begin PBXFileReference section */
 		B65F97AE2DBBC9D7005FD4BB /* ServerView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServerView; sourceTree = "<group>"; };
 		B67009BF2DB2C19000C8D3EE /* APISampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APISampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B683DCAE2DBD0CE80066E3C9 /* TodoListView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TodoListView; sourceTree = "<group>"; };
 		B69247492DB2C886008C2511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B692474A2DB2C886008C2511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B692474C2DB2C886008C2511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		B683DCA22DBCEF4F0066E3C9 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				B683DCAE2DBD0CE80066E3C9 /* TodoListView */,
 			);
 			path = Client;
 			sourceTree = "<group>";

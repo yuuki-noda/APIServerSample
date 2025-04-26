@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="Root">
             <connections>
-                <outlet property="serverModeButton" destination="wv7-lG-FMT" id="kmI-iu-qeJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JeR-5Y-jNG"/>
             </connections>
         </placeholder>
@@ -22,8 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv7-lG-FMT">
-                    <rect key="frame" x="130.66666666666666" y="404" width="131.99999999999997" height="44"/>
-                    <color key="backgroundColor" name="AccentColor"/>
+                    <rect key="frame" x="130.66666666666666" y="448" width="131.99999999999997" height="44"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="132" id="Gz4-cm-xw4"/>
                         <constraint firstAttribute="height" constant="44" id="uoU-83-s2G"/>
@@ -37,22 +35,42 @@
                         <action selector="didTapServerModeButton" destination="-1" eventType="touchUpInside" id="g1I-72-blf"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-im-5YI">
+                    <rect key="frame" x="130.66666666666666" y="360" width="131.99999999999997" height="44"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="7hy-MV-10J"/>
+                        <constraint firstAttribute="width" constant="132" id="RzS-8g-pGn"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Client Mode">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="didTapClientModeButton" destination="-1" eventType="touchUpInside" id="qgF-6t-306"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="wv7-lG-FMT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FYV-uV-Djs"/>
+                <constraint firstItem="wv7-lG-FMT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="44" id="FYV-uV-Djs"/>
+                <constraint firstItem="wv7-lG-FMT" firstAttribute="top" secondItem="IkJ-im-5YI" secondAttribute="bottom" constant="44" id="Rh4-Ln-I43"/>
+                <constraint firstItem="IkJ-im-5YI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tvC-GN-Rgs"/>
                 <constraint firstItem="wv7-lG-FMT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="x4L-J2-0So"/>
             </constraints>
             <point key="canvasLocation" x="59" y="20"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
